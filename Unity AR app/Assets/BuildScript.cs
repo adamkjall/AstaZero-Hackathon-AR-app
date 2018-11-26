@@ -17,33 +17,50 @@ public class BuildScript : MonoBehaviour
     private float moveSpeed = 15f;
     private float rotateSpeed = 180f;
     private GameObject rootObej;
-    private float delay = 0.1f;
+    private float delay = 0.2f;
     private int scale = 5;
 
     // Use this for initialization
-    void Start()
+    IEnumerator Start()
     {
 
+        createFloor(0, 0, 0, 450, 600);
+        yield return new WaitForSeconds(delay);
+
         TestSpawnCubeX(0, 0, 0, 265, 40); //bottom outer wall
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeX(335, 0, 0, 115, 40); //bottom outer wall
+        yield return new WaitForSeconds(delay);
+
         TestSpawnCubeX(0, 0, 600, 450, 40); //top outer wall
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeX(260, 0, 345, 95, 40); //kitchen bottom wall
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeX(345, 0, 110, 105, 40); //closet top wall
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeX(0, 0, 155, 85, 40); //bathroom top wall
 
-
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeZ(0, 0, 0, 600, 40); //left outer wall
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeZ(450, 0, 0, 600, 40); //right outer wall
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeZ(155, 0, 0, 155, 40); //bathroom right wall
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeZ(260, 0, 0, 145, 40); //closet wall
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeZ(345, 0, 0, 20, 40); //closet little shit wall
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeZ(345, 0, 90, 20, 40); //closet top little shit wall
+        yield return new WaitForSeconds(delay);
         TestSpawnCubeZ(260, 0, 345, 255, 40); //kitchen left wall
+        yield return new WaitForSeconds(delay);
 
-        createFloor(0, 0, 0, 450, 600);
 
         createWindow(40, 20, 600, 65, 20, 3);
+        yield return new WaitForSeconds(delay);
         createWindow(180, 20, 600, 65, 20, 3);
+        yield return new WaitForSeconds(delay);
         createWindow(355, 20, 600, 65, 20, 3);
 
         //spawnBathtub();

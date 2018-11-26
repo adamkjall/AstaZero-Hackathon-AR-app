@@ -52,9 +52,11 @@ public class MyPrefabInstantiator : MonoBehaviour, ITrackableEventHandler
             GameObject go = GameObject.Instantiate(myModelPrefab);
             Transform myModelTrf = go.transform;
             myModelTrf.parent = mTrackableBehaviour.transform;
-            //myModelTrf.localPosition = new Vector3(0f, 0f, 0f);
+            myModelTrf.localPosition = new Vector3(-400f, 0, -400);
+            myModelTrf.transform.Rotate(90, 0, 0);
             myModelTrf.localRotation = Quaternion.identity;
-            //myModelTrf.localScale = new Vector3(0.0005f, 0.0005f, 0.0005f);
+            
+            myModelTrf.localScale = new Vector3(1f, 1f, 1f);
             myModelTrf.gameObject.SetActive(true);
             
         }
